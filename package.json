@@ -1,0 +1,19 @@
+{
+  "name": "cheerio-scraping",
+  "version": "1.0.0",
+  "description": "using cheerio to scrape the web pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/incessantmeraki/cheerio-scraping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/incessantmeraki/cheerio-scraping/issues"
+  },
+  "homepage": "https://github.com/incessantmeraki/cheerio-scraping#readme"
+}
