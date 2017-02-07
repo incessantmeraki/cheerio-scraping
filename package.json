@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/incessantmeraki/cheerio-scraping/issues"
   },
-  "homepage": "https://github.com/incessantmeraki/cheerio-scraping#readme"
+  "homepage": "https://github.com/incessantmeraki/cheerio-scraping#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  }
 }
