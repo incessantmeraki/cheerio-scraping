@@ -4,6 +4,7 @@ var request = require('request')
 
 var teacherURLs = []
 var result = fs.createWriteStream('./output')
+result.end()
 
 function gotHTML(err, resp, html) {
   if (err) return console.error(err)
@@ -12,13 +13,21 @@ function gotHTML(err, resp, html) {
   parsedHTML('.views-field-field-faculty-profile-image a').map(function (i, link) {
     //console.log(link)
     var href = $(link).attr('href')
-    result.write(href.toString()+'\n')
+    //result.write(href.toString()+'\n')
+    var data = href.toString()+'\n'
     teacherURLs.push(href)
+    fs.appendFile('./output', data, function (err) {
+      if (err) console.log(err)
+    })
   })
   //console.log(teacherURLs)
 }
 
-var domain = 'http://bmsce.ac.in/department/computer-science-and-engineering/faculty' 
+var domains = []
+domains.push('http://bmsce.ac.in/department/architecture/faculty') 
+//domains.push('http://bmsce.ac.in/department/computer-science-and-engineering/faculty?page=1')
 
-request(domain, gotHTML)
+domains.forEach(function (domain) {
+  request(domain, gotHTML)
+})
 
